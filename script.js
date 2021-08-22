@@ -7,27 +7,11 @@ let gameScreen = document.getElementById('game-screen');
 
 let newGameButton = document.getElementById('button-newgame');
 
-newGameButton.onclick = () => {
-	menuScreen.style.display = 'none';
-	gameScreen.style.display = 'block';
-	newGame();
-};
-
 /* Main Menu Modal Config */
 let modalWindow = document.getElementById('modal-menu-window');
 let modalClose = document.getElementById('modal-menu-close');
 let howToPlayButton = document.getElementById('button-howto');
 let howToVideo = document.getElementById('howto-video');
-
-howToPlayButton.onclick = () => {
-	modalWindow.style.position = 'fixed';
-	howToVideo.src = 'https://www.youtube.com/embed/x5Q6-wMx-K8';
-};
-
-modalClose.onclick = () => {
-	modalWindow.style.position = 'static';
-	howToVideo.src = '';
-};
 
 /* Game Screen Config */
 
@@ -36,9 +20,7 @@ let playerScore;
 let computerScore;
 
 let showPlayerScore = document.getElementById('score-player-points');
-
 let showComputerScore = document.getElementById('score-computer-points');
-
 let showRoundResult = document.getElementById('round-result');
 
 
@@ -297,36 +279,44 @@ function gameOver(){
 	endScreen.style.display = 'block';
 }
 
-/* Icon Click */
-playerRock.onclick = () => {
-	result = playMatch(playerTurn('Rock'),computerTurn());
-	evalResult(result);
-}
-
-playerPaper.onclick = () => {
-	result = playMatch(playerTurn('Paper'),computerTurn());
-	evalResult(result);
-}
-
-playerScissors.onclick = () => {
-	result = playMatch(playerTurn('Scissors'),computerTurn());
-	evalResult(result);
-}
-
-playerLizard.onclick = () => {
-	result = playMatch(playerTurn('Lizard'),computerTurn());
-	evalResult(result);
-}
-
-playerSpock.onclick = () => {
-	result = playMatch(playerTurn('Spock'),computerTurn());
-	evalResult(result);
-}
-
 // End Game Delcaration
 let mainMenu = document.getElementById("end-button-menu");
 
-mainMenu.onclick = () => {
-	endScreen.style.display="none";
-	menuScreen.style.display="block";
+// 2.1 Updates
+function newGameScreen(){
+	menuScreen.style.display = 'none';
+	gameScreen.style.display = 'block';
+	newGame();
 }
+
+function howToOpen(){
+	modalWindow.style.position = 'fixed';
+	howToVideo.src = 'https://www.youtube.com/embed/x5Q6-wMx-K8';
+}
+
+function howToClose(){
+	modalWindow.style.position = 'static';
+	howToVideo.src = '';
+}
+
+function mainMenuScreen(){
+	endScreen.style.display = 'none';
+	menuScreen.style.display = 'block';
+}
+
+function playMove(e){
+	let move = e.target.getAttribute('data-move');
+	evalResult(playMatch(playerTurn(move), computerTurn()));
+}
+
+newGameButton.addEventListener('click', newGameScreen);
+howToPlayButton.addEventListener('click', howToOpen);
+modalClose.addEventListener('click', howToClose);
+mainMenu.addEventListener('click', mainMenuScreen);
+
+
+playerRock.addEventListener('click', playMove);
+playerPaper.addEventListener('click', playMove);
+playerScissors.addEventListener('click', playMove);
+playerLizard.addEventListener('click', playMove);
+playerSpock.addEventListener('click', playMove);
