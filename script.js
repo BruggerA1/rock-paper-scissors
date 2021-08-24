@@ -1,61 +1,17 @@
-/* Screen Declarations */
-let menuScreen = document.getElementById('main-menu');
-let endScreen = document.getElementById('end-game');
-let gameScreen = document.getElementById('game-screen');
-
-/* Main Menu Config */
-
-let newGameButton = document.getElementById('button-newgame');
-
-/* Main Menu Modal Config */
-let modalWindow = document.getElementById('modal-menu-window');
-let modalClose = document.getElementById('modal-menu-close');
-let howToPlayButton = document.getElementById('button-howto');
-let howToVideo = document.getElementById('howto-video');
-
-/* Game Screen Config */
-
-/* Initialize Scores */
-let playerScore;
-let computerScore;
-
-let showPlayerScore = document.getElementById('score-player-points');
-let showComputerScore = document.getElementById('score-computer-points');
-let showRoundResult = document.getElementById('round-result');
-
-
-/* Initialize Player Icons */
-let playerRock = document.getElementById('player-icon-rock');
-let playerPaper = document.getElementById('player-icon-paper');
-let playerScissors = document.getElementById('player-icon-scissors');
-let playerLizard = document.getElementById('player-icon-lizard');
-let playerSpock = document.getElementById('player-icon-spock');
-
-/* Initialize Computer Icons */
-let computerRock = document.getElementById('computer-icon-rock');
-let computerPaper = document.getElementById('computer-icon-paper');
-let computerScissors = document.getElementById('computer-icon-scissors');
-let computerLizard = document.getElementById('computer-icon-lizard');
-let computerSpock = document.getElementById('computer-icon-spock');
-
-/* Game Functions */
-let move;
-
+/* FUNCTIONS */
 function newGame() {
 	playerScore = computerScore = 0;
-	showPlayerScore.innerHTML = playerScore;
-	showComputerScore.innerHTML = computerScore;
-	showRoundResult.innerHTML = "";
+	showPlayerScore.innerText = playerScore;
+	showComputerScore.innerText = computerScore;
+	showRoundResult.innerText = '';
 }
-
-function playerTurn(move){
+function playerTurn(move) {
 	return move;
 }
-
 function computerTurn() {
-	let move = Math.floor((Math.random() * 5) + 1);
-	
-	switch(move) {
+	let move = Math.floor(Math.random() * 5 + 1);
+
+	switch (move) {
 		case 1:
 			return 'Rock';
 			break;
@@ -73,71 +29,70 @@ function computerTurn() {
 			break;
 	}
 }
-
-function playMatch(playerTurn, computerTurn){
-	switch(playerTurn) {
+function playMatch(playerTurn, computerTurn) {
+	switch (playerTurn) {
 		case 'Rock':
-			switch(computerTurn){
+			switch (computerTurn) {
 				case 'Rock':
-					showRoundResult.innerHTML = `TIE!
+					showRoundResult.innerText = `TIE!
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Tie';
 					break;
 				case 'Paper':
-					showRoundResult.innerHTML = `YOU LOSE! Paper Covers Rock.
+					showRoundResult.innerText = `YOU LOSE! Paper Covers Rock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Scissors':
-					showRoundResult.innerHTML = `YOU WIN! Rock Crushes Scissors.
+					showRoundResult.innerText = `YOU WIN! Rock Crushes Scissors.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Lizard':
-					showRoundResult.innerHTML = `YOU WIN! Rock Bashes Lizard.
+					showRoundResult.innerText = `YOU WIN! Rock Bashes Lizard.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Spock':
-					showRoundResult.innerHTML = `YOU LOSE! Spock Vaporizes Rock.
+					showRoundResult.innerText = `YOU LOSE! Spock Vaporizes Rock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
-				}
+			}
 			break;
 		case 'Paper':
-			switch(computerTurn){
+			switch (computerTurn) {
 				case 'Rock':
-					showRoundResult.innerHTML = `YOU WIN! Paper Covers Rock.
+					showRoundResult.innerText = `YOU WIN! Paper Covers Rock.
 					Player: ${playerTurn}.
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Paper':
-					showRoundResult.innerHTML = `TIE!
+					showRoundResult.innerText = `TIE!
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Tie';
 					break;
 				case 'Scissors':
-					showRoundResult.innerHTML = `YOU LOSE! Scissors Cuts Paper.
+					showRoundResult.innerText = `YOU LOSE! Scissors Cuts Paper.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Lizard':
-					showRoundResult.innerHTML = `YOU LOSE! Lizard Eats Paper.
+					showRoundResult.innerText = `YOU LOSE! Lizard Eats Paper.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Spock':
-					showRoundResult.innerHTML = `YOU WIN! Paper Disproves Spock.
+					showRoundResult.innerText = `YOU WIN! Paper Disproves Spock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
@@ -145,33 +100,33 @@ function playMatch(playerTurn, computerTurn){
 			}
 			break;
 		case 'Scissors':
-			switch(computerTurn){
+			switch (computerTurn) {
 				case 'Rock':
-					showRoundResult.innerHTML = `YOU LOSE! Rock Crushes Scissors.
+					showRoundResult.innerText = `YOU LOSE! Rock Crushes Scissors.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Paper':
-					showRoundResult.innerHTML = `YOU WIN! Scissors Cuts Paper.
+					showRoundResult.innerText = `YOU WIN! Scissors Cuts Paper.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Scissors':
-					showRoundResult.innerHTML = `TIE!
+					showRoundResult.innerText = `TIE!
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Tie';
 					break;
 				case 'Lizard':
-					showRoundResult.innerHTML = `YOU WIN! Scissors Decapitates Lizard.
+					showRoundResult.innerText = `YOU WIN! Scissors Decapitates Lizard.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Spock':
-					showRoundResult.innerHTML = `YOU LOSE! Spock Smashes Scissors.
+					showRoundResult.innerText = `YOU LOSE! Spock Smashes Scissors.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
@@ -179,68 +134,67 @@ function playMatch(playerTurn, computerTurn){
 			}
 			break;
 		case 'Lizard':
-			switch(computerTurn){
+			switch (computerTurn) {
 				case 'Rock':
-					showRoundResult.innerHTML = `YOU LOSE! Rock Bashes Lizard.
+					showRoundResult.innerText = `YOU LOSE! Rock Bashes Lizard.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Paper':
-					showRoundResult.innerHTML = `YOU WIN! Lizard eats Paper.
+					showRoundResult.innerText = `YOU WIN! Lizard eats Paper.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Scissors':
-					showRoundResult.innerHTML = `YOU LOSE! Scissors Decapitates Lizard.
+					showRoundResult.innerText = `YOU LOSE! Scissors Decapitates Lizard.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Lizard':
-					showRoundResult.innerHTML = `TIE!
+					showRoundResult.innerText = `TIE!
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Tie';
 					break;
 				case 'Spock':
-					showRoundResult.innerHTML = `YOU WIN! izard Poisons Spock.
+					showRoundResult.innerText = `YOU WIN! izard Poisons Spock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
-	
 			}
 			break;
 		case 'Spock':
-			switch(computerTurn){
+			switch (computerTurn) {
 				case 'Rock':
-					showRoundResult.innerHTML = `YOU WIN! Spock Vaporizes Rock.
+					showRoundResult.innerText = `YOU WIN! Spock Vaporizes Rock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Paper':
-					showRoundResult.innerHTML = `YOU LOSE! Paper disproves Spock.
+					showRoundResult.innerText = `YOU LOSE! Paper disproves Spock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Scissors':
-					showRoundResult.innerHTML = `YOU WIN! Spock Smashes Scissors.
+					showRoundResult.innerText = `YOU WIN! Spock Smashes Scissors.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Win';
 					break;
 				case 'Lizard':
-					showRoundResult.innerHTML = `YOU LOSE! Lizard Poisons Spock.
+					showRoundResult.innerText = `YOU LOSE! Lizard Poisons Spock.
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Lose';
 					break;
 				case 'Spock':
-					showRoundResult.innerHTML = `TIE!
+					showRoundResult.innerText = `TIE!
 					Player: ${playerTurn}
 					Computer: ${computerTurn}`;
 					return 'Tie';
@@ -249,71 +203,93 @@ function playMatch(playerTurn, computerTurn){
 			break;
 	}
 }
-
-function evalResult(result){
-	switch(result) {
+function evalResult(result) {
+	switch (result) {
 		case 'Win':
 			playerScore++;
-			showPlayerScore.innerHTML = playerScore;
-			if (playerScore >= 5){
+			showPlayerScore.innerText = playerScore;
+			if (playerScore >= 5) {
 				gameOver();
-				document.getElementById("end-result").innerHTML = 'YOU WIN';
+				document.getElementById('end-result').innerText = 'YOU WIN';
 			}
 			break;
 		case 'Lose':
 			computerScore++;
-			showComputerScore.innerHTML = computerScore;
-			if (computerScore >= 5){
+			showComputerScore.innerText = computerScore;
+			if (computerScore >= 5) {
 				gameOver();
-				document.getElementById("end-result").innerHTML = 'YOU LOSE... 😂';
-
+				document.getElementById('end-result').innerText = 'YOU LOSE... 😂';
 			}
 			break;
 		case 'Tie':
 			break;
 	}
 }
-
-function gameOver(){
+function gameOver() {
 	gameScreen.style.display = 'none';
 	endScreen.style.display = 'block';
 }
-
-// End Game Delcaration
-let mainMenu = document.getElementById("end-button-menu");
-
-// 2.1 Updates
-function newGameScreen(){
+// added v2.1
+function newGameScreen() {
 	menuScreen.style.display = 'none';
 	gameScreen.style.display = 'block';
 	newGame();
 }
-
-function howToOpen(){
+function howToOpen() {
 	modalWindow.style.position = 'fixed';
 	howToVideo.src = 'https://www.youtube.com/embed/x5Q6-wMx-K8';
 }
-
-function howToClose(){
+function howToClose() {
 	modalWindow.style.position = 'static';
 	howToVideo.src = '';
 }
-
-function mainMenuScreen(){
+function mainMenuScreen() {
 	endScreen.style.display = 'none';
 	menuScreen.style.display = 'block';
 }
-
-function playMove(e){
+function playMove(e) {
 	let move = e.target.getAttribute('data-move');
 	evalResult(playMatch(playerTurn(move), computerTurn()));
 }
 
+/* VARIABLES */
+let move;
+let playerScore;
+let computerScore;
+
+let menuScreen = document.getElementById('main-menu');
+let endScreen = document.getElementById('end-game');
+let gameScreen = document.getElementById('game-screen');
+
+let newGameButton = document.getElementById('button-newgame');
+let howToPlayButton = document.getElementById('button-howto');
+let mainMenu = document.getElementById('end-button-menu');
+
+let modalWindow = document.getElementById('modal-menu-window');
+let modalClose = document.getElementById('modal-menu-close');
+let howToVideo = document.getElementById('howto-video');
+
+let showPlayerScore = document.getElementById('score-player-points');
+let showComputerScore = document.getElementById('score-computer-points');
+let showRoundResult = document.getElementById('round-result');
+
+let playerRock = document.getElementById('player-icon-rock');
+let playerPaper = document.getElementById('player-icon-paper');
+let playerScissors = document.getElementById('player-icon-scissors');
+let playerLizard = document.getElementById('player-icon-lizard');
+let playerSpock = document.getElementById('player-icon-spock');
+
+let computerRock = document.getElementById('computer-icon-rock');
+let computerPaper = document.getElementById('computer-icon-paper');
+let computerScissors = document.getElementById('computer-icon-scissors');
+let computerLizard = document.getElementById('computer-icon-lizard');
+let computerSpock = document.getElementById('computer-icon-spock');
+
+/* EVENT LISTENERS */
 newGameButton.addEventListener('click', newGameScreen);
 howToPlayButton.addEventListener('click', howToOpen);
 modalClose.addEventListener('click', howToClose);
 mainMenu.addEventListener('click', mainMenuScreen);
-
 
 playerRock.addEventListener('click', playMove);
 playerPaper.addEventListener('click', playMove);

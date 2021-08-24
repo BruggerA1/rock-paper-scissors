@@ -1,148 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock-Paper-Scissors-Lizard-Spock</title>
 
-	<title>Rock-Paper-Scissors-Lizard-Spock</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-	<link rel="stylesheet" href="style.css" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-		integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
-<!-- Main-Menu -->
-<div id="main-menu" class="window theme">
-	<!-- Title -->
-	<div id="menu-container-title" class="theme flex">
-		<!--Rock-->
-		<div class="title-container-move flex flex-col">
-			<i id="title-icon-rock" class="
-						far
-						fa-hand-rock
-						title-icon
-						animate__animated animate__backInDown
-					"></i>
-			<span id="title-text-rock" class="animate__animated animate__backInUp title-text">Rock</span>
+		<script src="script.js" defer></script>
+	</head>
+	<!-- Main-Menu -->
+	<div id="main-menu" class="window theme">
+		<!-- Title -->
+		<div id="menu-container-title" class="theme flex">
+			<!--Rock-->
+			<div class="title-container-move flex flex-col">
+				<i id="title-icon-rock" class="far fa-hand-rock title-icon animate__animated animate__backInDown"></i>
+				<span id="title-text-rock" class="animate__animated animate__backInUp title-text">Rock</span>
+			</div>
+			<!--Paper-->
+			<div class="title-container-move flex flex-col">
+				<i id="title-icon-paper" class="far fa-hand-paper title-icon animate__animated animate__backInDown"></i>
+				<span id="title-text-paper" class="animate__animated animate__backInUp title-text">Paper</span>
+			</div>
+			<!--Scissors-->
+			<div class="title-container-move flex flex-col">
+				<i id="title-icon-scissors" class="far fa-hand-scissors title-icon animate__animated animate__backInDown"></i>
+				<span id="title-text-scissors" class="animate__animated animate__backInUp title-text">Scissors</span>
+			</div>
+			<!--Lizard-->
+			<div class="title-container-move flex flex-col">
+				<i id="title-icon-lizard" class="far fa-hand-lizard title-icon animate__animated animate__backInDown"></i>
+				<span id="title-text-lizard" class="animate__animated animate__backInUp title-text">Lizard</span>
+			</div>
+			<!--Spock-->
+			<div class="title-container-move flex flex-col">
+				<i id="title-icon-spock" class="far fa-hand-spock title-icon animate__animated animate__backInDown"></i>
+				<span id="title-text-spock" class="animate__animated animate__backInUp title-text">Spock</span>
+			</div>
 		</div>
-		<!--Paper-->
-		<div class="title-container-move flex flex-col">
-			<i id="title-icon-paper" class="
-						far
-						fa-hand-paper
-						title-icon
-						animate__animated animate__backInDown
-					"></i>
-			<span id="title-text-paper" class="animate__animated animate__backInUp title-text">Paper</span>
-		</div>
-		<!--Scissors-->
-		<div class="title-container-move flex flex-col">
-			<i id="title-icon-scissors" class="
-						far
-						fa-hand-scissors
-						title-icon
-						animate__animated animate__backInDown
-					"></i>
-			<span id="title-text-scissors" class="animate__animated animate__backInUp title-text">Scissors</span>
-		</div>
-		<!--Lizard-->
-		<div class="title-container-move flex flex-col">
-			<i id="title-icon-lizard" class="
-						far
-						fa-hand-lizard
-						title-icon
-						animate__animated animate__backInDown
-					"></i>
-			<span id="title-text-lizard" class="animate__animated animate__backInUp title-text">Lizard</span>
-		</div>
-		<!--Spock-->
-		<div class="title-container-move flex flex-col">
-			<i id="title-icon-spock" class="
-						far
-						fa-hand-spock
-						title-icon
-						animate__animated animate__backInDown
-					"></i>
-			<span id="title-text-spock" class="animate__animated animate__backInUp title-text">Spock</span>
-		</div>
-	</div>
 
-	<!-- Buttons -->
-	<div id="menu-container-button" class="theme flex flex-col">
-		<span id="button-newgame" class="title-button">New Game</span>
-		<span id="button-howto" class="title-button">How-To Play</span>
-	</div>
+		<!-- Buttons -->
+		<div id="menu-container-button" class="theme flex flex-col">
+			<span id="button-newgame" class="title-button">New Game</span>
+			<span id="button-howto" class="title-button">How-To Play</span>
+		</div>
 
-	<!-- Credits -->
-	<div id="menu-container-credits" class="theme flex flex-col">
-		<span>
-			A
-			<a id="brugg" class="theme" href="http://bru.gg">bru.GG</a>
-			production.
-		</span>
-	</div>
-
-	<!-- How-To Modal Window -->
-	<div id="modal-menu-window" class="flex">
-		<div id="modal-menu-container" class="">
-			<span id="modal-menu-close" class="">&times;</span>
-			<span id="modal-menu-content" class="flex">
-				<iframe id="howto-video" frameborder="0"></iframe>
+		<!-- Credits -->
+		<div id="menu-container-credits" class="theme flex flex-col">
+			<span>
+				A <a id="brugg" class="theme" href="http://bru.gg">bru.GG</a> production.
 			</span>
 		</div>
-	</div>
-</div>
 
-<!-- Game Screen -->
-<div id="game-screen" class="window theme">
-	<!-- Score Container -->
-	<div id="game-container-score" class="flex">
-		<!-- Player Score -->
-		<div id="score-container-player" class="flex flex-col">
-			<span id="score-player-text" class="score">PLAYER</span>
-			<span id="score-player-points" class="score"></span>
-		</div>
-		<!-- Best of Indicator -->
-		<div id="score-container-text" class="flex flex-col">
-			<span id="score-text">FIRST TO 5 WINS &nbsp;</span>
-			<span id="round-result"> </span>
-		</div>
-		<!-- Computer Score -->
-		<div id="score-container-computer" class="flex flex-col">
-			<span id="score-computer-text" class="score">CPU</span>
-			<span id="score-computer-points" class="score"></span>
+		<!-- How-To Modal Window -->
+		<div id="modal-menu-window" class="flex">
+			<div id="modal-menu-container" class="">
+				<span id="modal-menu-close" class="">&times;</span>
+				<span id="modal-menu-content" class="flex">
+					<iframe id="howto-video" frameborder="0"></iframe>
+				</span>
+			</div>
 		</div>
 	</div>
-	<div id="game-container-move" class="flex">
-		<div id="game-container-move-player" class="flex flex-col">
-			<i data-move="Rock" id="player-icon-rock" class="far fa-hand-rock player-icon"></i>
-			<i data-move="Paper" id="player-icon-paper" class="far fa-hand-paper player-icon"></i>
-			<i data-move="Scissors" id="player-icon-scissors" class="far fa-hand-scissors player-icon"></i>
-			<i data-move="Lizard" id="player-icon-lizard" class="far fa-hand-lizard player-icon"></i>
-			<i data-move="Spock" id="player-icon-spock" class="far fa-hand-spock player-icon"></i>
-		</div>
-		<div id="game-container-move-computer" class="flex flex-col">
-			<i id="computer-icon-rock" class="far fa-hand-rock computer-icon"></i>
-			<i id="computer-icon-paper" class="far fa-hand-paper computer-icon"></i>
-			<i id="computer-icon-scissors" class="far fa-hand-scissors computer-icon"></i>
-			<i id="computer-icon-lizard" class="far fa-hand-lizard computer-icon"></i>
-			<i id="computer-icon-spock" class="far fa-hand-spock computer-icon"></i>
-		</div>
-	</div>
-</div>
 
-<!-- End Game-->
-<div id="end-game" class="window theme">
-	<div id="end-container-result" class="flex">
-		<span id="end-result"></span>
+	<!-- Game Screen -->
+	<div id="game-screen" class="window theme">
+		<!-- Score Container -->
+		<div id="game-container-score" class="flex">
+			<!-- Player Score -->
+			<div id="score-container-player" class="flex flex-col">
+				<span id="score-player-text" class="score">PLAYER</span>
+				<span id="score-player-points" class="score"></span>
+			</div>
+			<!-- Best of Indicator -->
+			<div id="score-container-text" class="flex flex-col">
+				<span id="score-text">FIRST TO 5 WINS &nbsp;</span>
+				<span id="round-result"> </span>
+			</div>
+			<!-- Computer Score -->
+			<div id="score-container-computer" class="flex flex-col">
+				<span id="score-computer-text" class="score">CPU</span>
+				<span id="score-computer-points" class="score"></span>
+			</div>
+		</div>
+		<div id="game-container-move" class="flex">
+			<div id="game-container-move-player" class="flex flex-col">
+				<i data-move="Rock" id="player-icon-rock" class="far fa-hand-rock player-icon"></i>
+				<i data-move="Paper" id="player-icon-paper" class="far fa-hand-paper player-icon"></i>
+				<i data-move="Scissors" id="player-icon-scissors" class="far fa-hand-scissors player-icon"></i>
+				<i data-move="Lizard" id="player-icon-lizard" class="far fa-hand-lizard player-icon"></i>
+				<i data-move="Spock" id="player-icon-spock" class="far fa-hand-spock player-icon"></i>
+			</div>
+			<div id="game-container-move-computer" class="flex flex-col">
+				<i id="computer-icon-rock" class="far fa-hand-rock computer-icon"></i>
+				<i id="computer-icon-paper" class="far fa-hand-paper computer-icon"></i>
+				<i id="computer-icon-scissors" class="far fa-hand-scissors computer-icon"></i>
+				<i id="computer-icon-lizard" class="far fa-hand-lizard computer-icon"></i>
+				<i id="computer-icon-spock" class="far fa-hand-spock computer-icon"></i>
+			</div>
+		</div>
 	</div>
-	<div id="end-container-button" class="flex">
-		<span id="end-button-menu" class="title-button">Main-Menu</span>
+
+	<!-- End Game-->
+	<div id="end-game" class="window theme">
+		<div id="end-container-result" class="flex">
+			<span id="end-result"></span>
+		</div>
+		<div id="end-container-button" class="flex">
+			<span id="end-button-menu" class="title-button">Main-Menu</span>
+		</div>
 	</div>
-</div>
-
-<script src="script.js"></script>
-
 </html>

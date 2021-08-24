@@ -174,7 +174,7 @@
 }
 
 #score-player-text,
-#score-computer-text{
+#score-computer-text {
 	margin-top: 2vh;
 }
 .player-icon,
@@ -185,37 +185,32 @@
 	transition: 250ms;
 }
 
-.player-icon{
+.player-icon {
 	transform: scalex(-1);
 }
 
 .player-icon:hover {
-	transform: scale(-1.5,1.5);
+	transform: scale(-1.5, 1.5);
 	cursor: pointer;
 	filter: drop-shadow(1px 1px 2px #ffffff);
 }
 
-#round-result{
+#round-result {
 	width: 50vw;
 	margin-top: 2vh;
-	white-space:pre-line;
+	white-space: pre-line;
 	text-align: center;
 }
 
 /* End Game Declarations*/
-#end-container-result{
+#end-container-result {
 	height: 60vh;
-	
 }
 
-#end-result{
+#end-result {
 	font-size: 48pt;
 }
 
-#end-container-button{
+#end-container-button {
 	height: 38vh;
-}
-
-#end-button-menu{
-	
 }
